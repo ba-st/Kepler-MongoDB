@@ -6,7 +6,7 @@ You can load **Kepler document persistence** evaluating:
 ```smalltalk
 Metacello new
 	baseline: 'KeplerDocumentPersistence';
-	repository: 'github://fortizpenaloza/Kepler-Document-Persistence:master/repository';
+	repository: 'github://fortizpenaloza/Kepler-Document-Persistence:master/source';
 	load.
 ```
 >  Change `master` to some released version if you want a pinned version
