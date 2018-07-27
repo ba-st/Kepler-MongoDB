@@ -13,7 +13,7 @@
 </p>
 
 [![GitHub release](https://img.shields.io/github/release/fortizpenaloza/Kepler-Document-Persistence.svg)](https://github.com/fortizpenaloza/Kepler-Document-Persistence/releases/latest)
-[![Build Status](https://travis-ci.org/fortizpenaloza/Kepler-Document-Persistence.svg?branch=master)](https://travis-ci.org/fortizpenaloza/Kepler-Document-Persistence)
+[![Build Status](https://travis-ci.com/fortizpenaloza/Kepler-Document-Persistence.svg?branch=master)](https://travis-ci.org/fortizpenaloza/Kepler-Document-Persistence)
 [![Coverage Status](https://coveralls.io/repos/github/fortizpenaloza/Kepler-Document-Persistence/badge.svg?branch=master)](https://coveralls.io/github/fortizpenaloza/Kepler-Document-Persistence?branch=master)
 
 Why would I care about this thing? When to use, for whom is designed, when not to use.
