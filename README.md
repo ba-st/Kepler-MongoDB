@@ -24,7 +24,6 @@ Why would I care about this thing? When to use, for whom is designed, when not t
 ## Quick Start
 
 - Download the latest [Pharo 32](https://get.pharo.org/) or [64 bits VM](https://get.pharo.org/64/).
-- Download a ready to use image from the [release page](https://github.com/ba-st/Kepler-MongoDB/releases/latest)
 - Explore the [documentation](docs/)
 
 ## Installation
