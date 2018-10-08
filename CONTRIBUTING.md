@@ -5,7 +5,7 @@ There's several ways to contribute to the project: reporting bugs, sending feedb
 
 ## Reporting issues
 
-You can report issues [here](https://github.com/fortizpenaloza/Kepler-Document-Persistence/issues/new)
+You can report issues [here](https://github.com/ba-st/Kepler-MongoDB/issues/new)
 
 ## Contributing Code
 - This project is MIT licensed, so any code contribution MUST be under the same license.

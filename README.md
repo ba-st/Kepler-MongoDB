@@ -6,15 +6,14 @@
     <a href="docs/"><strong>Explore the docs »</strong></a>
     <br>
     <br>
-    <a href="https://github.com/fortizpenaloza/Kepler-Document-Persistence/issues/new?labels=Type%3A+Defect">Report a defect</a>
+    <a href="https://github.com/ba-st/Kepler-MongoDB/issues/new?labels=Type%3A+Defect">Report a defect</a>
     |
-    <a href="https://github.com/fortizpenaloza/Kepler-Document-Persistence/issues/new?labels=Type%3A+Feature">Request feature</a>
+    <a href="https://github.com/ba-st/Kepler-MongoDB/issues/new?labels=Type%3A+Feature">Request feature</a>
   </p>
 </p>
 
-[![GitHub release](https://img.shields.io/github/release/fortizpenaloza/Kepler-Document-Persistence.svg)](https://github.com/fortizpenaloza/Kepler-Document-Persistence/releases/latest)
-[![Build Status](https://travis-ci.com/fortizpenaloza/Kepler-Document-Persistence.svg?branch=master)](https://travis-ci.org/fortizpenaloza/Kepler-Document-Persistence)
-[![Coverage Status](https://coveralls.io/repos/github/fortizpenaloza/Kepler-Document-Persistence/badge.svg?branch=master)](https://coveralls.io/github/fortizpenaloza/Kepler-Document-Persistence?branch=master)
+[![Build Status](https://travis-ci.com/ba-st/Kepler-MongoDB.svg?branch=master)](https://travis-ci.org/ba-st/Kepler-MongoDB)
+[![Coverage Status](https://coveralls.io/repos/github/ba-st/Kepler-MongoDB/badge.svg?branch=master)](https://coveralls.io/github/ba-st/Kepler-MongoDB?branch=master)
 
 Why would I care about this thing? When to use, for whom is designed, when not to use.
 
@@ -25,7 +24,6 @@ Why would I care about this thing? When to use, for whom is designed, when not t
 ## Quick Start
 
 - Download the latest [Pharo 32](https://get.pharo.org/) or [64 bits VM](https://get.pharo.org/64/).
-- Download a ready to use image from the [release page](https://github.com/fortizpenaloza/Kepler-Document-Persistence/releases/latest)
 - Explore the [documentation](docs/)
 
 ## Installation

@@ -6,7 +6,7 @@ You can load **Kepler document persistence** evaluating:
 ```smalltalk
 Metacello new
 	baseline: 'KeplerDocumentPersistence';
-	repository: 'github://fortizpenaloza/Kepler-Document-Persistence:master/source';
+	repository: 'github://ba-st/Kepler-MongoDB:master/source';
 	load.
 ```
 >  Change `master` to some released version if you want a pinned version
@@ -21,7 +21,7 @@ setUpDependencies: spec
 	spec
 		baseline: 'KeplerDocumentPersistence'
 			with: [ spec
-				repository: 'github://fortizpenaloza/Kepler-Document-Persistence:v{XX}/source';
+				repository: 'github://ba-st/Kepler-MongoDB:v{XX}/source';
 				loads: #('Deployment') ];
 		import: 'KeplerDocumentPersistence'.
 ```
