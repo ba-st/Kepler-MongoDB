@@ -2,7 +2,9 @@ Class {
 	#name : #MongoDBBasedPersistenceSystem,
 	#superclass : #DocumentPersistenceSystem,
 	#instVars : [
-		'database'
+		'database',
+		'collections',
+		'dbMutex'
 	],
 	#category : #'Kepler-Document-Persistence'
 }
@@ -22,38 +24,43 @@ MongoDBBasedPersistenceSystem class >> using: aDatabase [
 { #category : #adding }
 MongoDBBasedPersistenceSystem >> add: aDocument onCollectionNamed: aName [
 
-	| collection | 
-	
-	collection := database getCollection: aName.
-	collection add: aDocument
+	dbMutex critical: [ (self cachedCollection: aName) add: aDocument ]
+]
+
+{ #category : #private }
+MongoDBBasedPersistenceSystem >> cachedCollection: aName [
+
+	^ collections at: aName ifAbsentPut: [ MongoCollection database: database name: aName ]
 ]
 
 { #category : #querying }
 MongoDBBasedPersistenceSystem >> collectionNamed: aName [
 
-	^ (database getCollection: aName)
-		query: [ :query | 
-			query
-				fields: {('_id' -> 0)} asDictionary;
-				order: {('date' -> 1)} asDictionary;
-				yourself ]
+	^ dbMutex
+		critical: [ (self cachedCollection: aName)
+				query: [ :query | 
+					query
+						fields: {('_id' -> 0)} asDictionary;
+						order: {('date' -> 1)} asDictionary;
+						yourself ] ]
 ]
 
 { #category : #initialization }
 MongoDBBasedPersistenceSystem >> initializeUsing: aDatabase [
 
 	super initialize.
-	database := aDatabase 
+	database := aDatabase.
+	collections := Dictionary new.
+	dbMutex := Semaphore forMutualExclusion
 ]
 
 { #category : #querying }
 MongoDBBasedPersistenceSystem >> oneDocumentFilteredBy: aBlock onCollectionNamed: aCollectionName ifFound: aFoundBlock ifNone: aNoneBlock [
 
-	| collection document |
+	| document |
 
-	collection := database getCollection: aCollectionName.
-	document := collection detect: aBlock.
-	document ifNil: aNoneBlock ifNotNil: [ aFoundBlock value: document ]
+	document := dbMutex critical: [ (self cachedCollection: aCollectionName) detect: aBlock ].
+	^ document ifNil: aNoneBlock ifNotNil: aFoundBlock
 ]
 
 { #category : #'dependency resolution' }
@@ -65,8 +72,5 @@ MongoDBBasedPersistenceSystem >> resolveDependecies [
 { #category : #updating }
 MongoDBBasedPersistenceSystem >> update: aDocumentToBeUpdated with: aDocument onCollectionNamed: aName [
 
-	| collection | 
-	
-	collection := database getCollection: aName.
-	collection update: aDocumentToBeUpdated with: aDocument
+	dbMutex critical: [ (self cachedCollection: aName) update: aDocumentToBeUpdated with: aDocument ]
 ]

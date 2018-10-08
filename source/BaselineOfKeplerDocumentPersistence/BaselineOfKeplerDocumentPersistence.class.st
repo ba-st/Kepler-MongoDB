@@ -48,13 +48,13 @@ BaselineOfKeplerDocumentPersistence >> setUpDependencies: spec [
 	spec
 		baseline: 'Kepler'
 		with: [ spec
-				repository: 'github://ba-st/Kepler:master/source';
+				repository: 'github://ba-st/Kepler:v2.0.0/source';
 				loads: #('Deployment' 'SystemBasedTests') ].
 	spec import: 'Kepler'.
 
 	spec
 		baseline: 'MongoTalk'
 		with: [ spec
-				repository: 'github://pharo-nosql/mongotalk:master/mc';
+				repository: 'github://pharo-nosql/mongotalk:v1.15/mc';
 				loads: #('Core' 'Tools') ]
 ]
