@@ -55,6 +55,6 @@ BaselineOfKeplerDocumentPersistence >> setUpDependencies: spec [
 	spec
 		baseline: 'MongoTalk'
 		with: [ spec
-				repository: 'github://pharo-nosql/mongotalk:v1.15/mc';
+				repository: 'github://pharo-nosql/mongotalk:1.15/mc';
 				loads: #('Core' 'Tools') ]
 ]
