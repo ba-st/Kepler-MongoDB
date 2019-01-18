@@ -54,7 +54,7 @@ BaselineOfKeplerDocumentPersistence >> setUpDependencies: spec [
 	spec
 		project: 'KeplerDevelopmentSupport'
 		copyFrom: 'Kepler'
-		with: [ spec loads: #('SystemBasedTests') ].
+		with: [ spec loads: #('SUnit') ].
 
 	spec
 		baseline: 'MongoTalk'
