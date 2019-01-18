@@ -69,6 +69,12 @@ MongoDBBasedPersistenceSystem >> resolveDependecies [
 	"do nothing"
 ]
 
+{ #category : #'starting - stopping' }
+MongoDBBasedPersistenceSystem >> shutDown [
+
+	database root close
+]
+
 { #category : #updating }
 MongoDBBasedPersistenceSystem >> update: aDocumentToBeUpdated with: aDocument onCollectionNamed: aName [
 

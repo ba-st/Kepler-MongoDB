@@ -18,12 +18,12 @@ BaselineOfKeplerDocumentPersistence >> baseline: spec [
 				package: 'Kepler-Document-Persistence'
 					with: [ spec requires: #('Kepler' 'MongoTalk') ];
 				package: 'Kepler-Document-Persistence-Tests'
-					with: [ spec requires: #('Kepler-Document-Persistence') ].
+					with: [ spec requires: #('Kepler-Document-Persistence' 'KeplerDevelopmentSupport') ].
 
 			spec
 				group: 'Deployment' with: #('Kepler-Document-Persistence');
 				group: 'Tests' with: #('Kepler-Document-Persistence-Tests');
-				group: 'Development' with: #('Deployment' 'Tests' 'SystemBasedTests');
+				group: 'Development' with: #('Deployment' 'Tests');
 				group: 'default' with: #('Deployment') ]
 ]
 
@@ -49,8 +49,12 @@ BaselineOfKeplerDocumentPersistence >> setUpDependencies: spec [
 		baseline: 'Kepler'
 		with: [ spec
 				repository: 'github://ba-st/Kepler:v2.0.3/source';
-				loads: #('Deployment' 'SystemBasedTests') ].
+				loads: #('Deployment') ].
 	spec import: 'Kepler'.
+	spec
+		project: 'KeplerDevelopmentSupport'
+		copyFrom: 'Kepler'
+		with: [ spec loads: #('SystemBasedTests') ].
 
 	spec
 		baseline: 'MongoTalk'
