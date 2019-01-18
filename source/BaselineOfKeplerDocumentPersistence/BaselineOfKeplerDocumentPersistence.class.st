@@ -48,7 +48,7 @@ BaselineOfKeplerDocumentPersistence >> setUpDependencies: spec [
 	spec
 		baseline: 'Kepler'
 		with: [ spec
-				repository: 'github://ba-st/Kepler:v2.0.3/source';
+				repository: 'github://ba-st/Kepler:v3/source';
 				loads: #('Deployment') ].
 	spec import: 'Kepler'.
 	spec
