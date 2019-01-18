@@ -39,7 +39,7 @@ BaselineOfKeplerDocumentPersistence >> registerInterface [
 { #category : #'interface registering' }
 BaselineOfKeplerDocumentPersistence >> registerInterfaceAs: aKey named: aName declaring: aSelectorSet [
 
-	SystemInterface bind: aKey to: (Interface named: aName declaring: aSelectorSet)
+	Kepler registerInterfaceAt: aKey named: aName declaring: aSelectorSet
 ]
 
 { #category : #baselines }
